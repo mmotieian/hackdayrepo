@@ -1,15 +1,27 @@
 package com.hackday.mapfinder.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
+import com.hackday.mapfinder.services.IEmployeeLookup;
+
+@Controller
 public class MainController {
 
-	@RequestMapping("/")
-	public String doSomething() {
+	private IEmployeeLookup iEmployeeLookup;
 
-		return "Hack Day Testing.";
+	@Autowired
+	public MainController(IEmployeeLookup iEmployeeLookup) {
+		this.iEmployeeLookup = iEmployeeLookup;
+	}
+
+	@RequestMapping("/")
+	public String doSomething(Model model) {
+
+		iEmployeeLookup.doLookup();
+		return "home";
 	}
 
 }
