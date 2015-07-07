@@ -20,7 +20,7 @@ public class MainController {
 	@RequestMapping("/")
 	public String doSomething(Model model) {
 
-		iEmployeeLookup.doLookup();
+		model.addAttribute("employeeList", iEmployeeLookup.doLookup());
 		return "home";
 	}
 
