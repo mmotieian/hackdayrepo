@@ -53,14 +53,14 @@
 
 --%>
 
-	<div class="tree">
+	<div class="tree" style="margin:auto; width:50%" >
 	
 		<ul>
-			<li><a href="#"><img src="/public/lib/img/${supervisor.alias}.png"
+			<li ><a href="${supervisor.supervisorAlias}"><img src="/public/lib/img/${supervisor.alias}.png"
 					alt="HELLO" class="img-circle" style="margin: auto;"></a>
 				<ul>
 					<c:forEach var="employee" items="${employeeList}">
-					<li><a href="#"><img src="/public/lib/img/${employee.alias}.png"
+					<li><a href="${employee.alias}"><img src="/public/lib/img/${employee.alias}.png"
 					alt="HELLO" class="img-circle" style="margin: auto;"></a>
 						<ul>
 						</ul></li>
