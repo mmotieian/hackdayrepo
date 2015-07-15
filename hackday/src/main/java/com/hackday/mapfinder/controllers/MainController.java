@@ -43,6 +43,11 @@ public class MainController {
         return "search";
     }
     
+    @RequestMapping(value="/orgChart/{alias}")
+    public String orgChart(Model model, @PathVariable String alias) {
+        return "orgChart";
+    }
+    
     @RequestMapping(value="/searchResults/employee", method=RequestMethod.GET, params="employee")
     public String getEmployee(@RequestParam("employee") String employee, Model model) {
         System.out.println(employee);
@@ -52,4 +57,5 @@ public class MainController {
         }
         model.addAttribute("employeeList", employeeList);
         return "searchResults";
+    }
 }

@@ -24,7 +24,7 @@
 					<h1>${employee.firstName}
 					<div class="btn-group" role="group" aria-label="...">
   						<!--<button type="button" class="btn btn-default pull-right">View Map</button>-->
-  						<button type="button" class="btn btn-default pull-right">View Organization Chart</button>
+  						<button type="button" onclick="window.location='/orgChart/${employee.alias}';" class="btn btn-default pull-right">View Organization Chart</button>
 					</div>
 					</h1>
 				</c:forEach>
