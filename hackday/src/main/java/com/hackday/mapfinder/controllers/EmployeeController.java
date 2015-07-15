@@ -30,7 +30,7 @@ public class EmployeeController {
 	
 	@RequestMapping(value = "/employees", method = RequestMethod.GET, headers="Accept=application/json")
 	public List<EmployeeModel> loadEmployees(Model model) {
-		return iEmployeeLookup.getEmployees();
+		return null;
 
 	}
 	
