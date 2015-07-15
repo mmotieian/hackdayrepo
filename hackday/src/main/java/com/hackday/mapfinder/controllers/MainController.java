@@ -52,8 +52,9 @@ public class MainController {
         return "searchResults";
     }
     
-    @RequestMapping("/mapPage")
-    public String mapPage(Model model) {
+    @RequestMapping("/mapPage/{cubicle}")
+    public String mapPage(Model model, @PathVariable String cubicle) {
+    	model.addAttribute("cubicle", cubicle);
     	return "mapPage";
     }
 }
