@@ -24,5 +24,9 @@
         <script src="/public/lib/js/jquery-2.1.4.min.js"></script>
         <script src="/public/lib/js/jquery-ui-1.11.4/jquery-ui.min.js"></script>
         <script src="/public/lib/js/mapPage.js"></script>
+        <script>
+        	var temp = "${cubicle}";
+        	alert(temp);
+        </script>
     </body>
 </html>
