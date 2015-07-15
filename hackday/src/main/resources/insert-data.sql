@@ -10,13 +10,13 @@ INSERT INTO CUBICLE VALUES ('1-9104');
 INSERT INTO CUBICLE VALUES ('1-9103');
 INSERT INTO CUBICLE VALUES ('1-9102');
 
-INSERT INTO EMPLOYEE VALUES ('FFAA','James', 'Mellinger', '1-9116', 'Systems-Analyst Web', '812-123-1231','FFAE');
+INSERT INTO EMPLOYEE VALUES ('FFAA','James', 'Mellinger', '1-9116', 'Systems-Analyst Web', '812-123-1231','FFAB');
 INSERT INTO EMPLOYEE VALUES ('FFAF','James', 'Byrd', '1-9103', 'Systems-Analyst Web', '812-123-1231','FFAE');
 INSERT INTO EMPLOYEE VALUES ('FFAB','Bernardo', 'Rivera', '1-9109', 'Systems-Analyst Web', '812-123-1231','FFAE');
 INSERT INTO EMPLOYEE VALUES ('FFAC','Elizabeth', 'Johnson', '1-9108', 'Systems-Analyst Web', '812-123-1231','FFAE');
 INSERT INTO EMPLOYEE VALUES ('FFAD','Thomas', 'Matthew', '1-9107', 'Systems-Analyst Web', '812-123-1231','FFAE');
-INSERT INTO EMPLOYEE VALUES ('FFAG','Daniel', 'Maclin', '1-9102', 'Systems-Analyst Web', '812-123-1231','FFAE');
+INSERT INTO EMPLOYEE VALUES ('FFAG','Daniel', 'Maclin', '1-9102', 'Systems-Analyst Web', '812-123-1231','');
 INSERT INTO EMPLOYEE VALUES ('FFAH','Greg', 'Sanders', '1-9110', 'Systems-Analyst Web', '812-123-1231','FFAE');
 INSERT INTO EMPLOYEE VALUES ('FFAI','Michael', 'Baker', '1-9111', 'Systems-Analyst Web', '812-123-1231','FFAE');
-INSERT INTO EMPLOYEE VALUES ('FFAE','Luke', 'Reardon', '1-9105', 'Manager', '812-123-1231','');
+INSERT INTO EMPLOYEE VALUES ('FFAE','Luke', 'Reardon', '1-9105', 'Manager', '812-123-1231','FFAG');
 

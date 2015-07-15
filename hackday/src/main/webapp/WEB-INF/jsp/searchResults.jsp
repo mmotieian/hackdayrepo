@@ -44,7 +44,7 @@
 						<td>${employee.lastName}</td> 
 						<td>${employee.alias}</td>
 						<td>
-	  					<button type="button" class="btn btn-default pull-right" onclick="location.href='/mapPage'">View Map</button>
+	  					<button type="button" class="btn btn-default pull-right" onclick="location.href='/mapPage/${employee.cubicle}'">View Map</button>
 	  					</td>
 	  					<td>
 	  					<button type="button" onclick="window.location='/orgChart/${employee.alias}';" class="btn btn-default pull-right">View Organization Chart</button>

@@ -19,13 +19,29 @@
 	<script src="/public/lib/js/bootstrap.min.js"></script>
 
 
-
+<script> 
+	var supervisor = {"superFirst": "${supervisor.firstName}",
+		"superLast": "${supervisor.lastName}",
+		"superTitle": "${supervisor.title}",
+		"superPN": "${supervisor.phoneNumer}",
+		"superCube":"${supervisor.cubicle}"
+	}
+	
+	console.log(JSON.stringify(supervisor));
+	
+	
+	function getPicture(employeeAlias){
+		var picStr = "/public/lib/img/"+.png
+		//return ${employeeList[i].alias};
+		console.log("in function");
+	}
+</script>
 <%--	<div>
 		<c:if test="${not empty employeeList}">
 			<ul>
 				<c:forEach var="employee" items="${employeeList}">
-					<li>${employee.fName}</li>
-					<li>${employee.lName}</li>
+					<li>${employee.firstName}</li>
+					<li>${employee.lastName}</li>
 					<li>${employee.title}</li>
 					<li>${employee.phoneNumer}</li>
 					<li>${employee.cubicle}</li>
@@ -36,35 +52,20 @@
 	</div>
 
 --%>
-	<div class="tree">
+
+	<div class="tree" style="margin-left:100px; width:100%" >
+	
 		<ul>
-			<li><a href="#"><img src="/public/lib/img/Riven.png"
+			<li ><a href="${supervisor.supervisorAlias}"><img style="width:200px;height:200px;" src="/public/lib/img/${supervisor.alias}.jpg"
 					alt="HELLO" class="img-circle" style="margin: auto;"></a>
 				<ul>
-					<li><a href="#"><img src="/public/lib/img/MasterYi.png"
+					<c:forEach var="employee" items="${employeeList}">
+					<li><a href="${employee.alias}"><img style="width:100px;height:100px;" src="/public/lib/img/${employee.alias}.jpg"
 					alt="HELLO" class="img-circle" style="margin: auto;"></a>
 						<ul>
-							<li><a href="#"><img src="/public/lib/img/Talon.png"
-					alt="HELLO" class="img-circle" style="margin: auto;"></a></li>
 						</ul></li>
-					<li><a href="#"><img src="/public/lib/img/Yasuo.png"
-							alt="HELLO" class="img-circle" style="margin: auto;"></a>
-						<ul>
-							<li><a href="#"><img src="/public/lib/img/Shaco.png"
-									alt="HELLO" class="img-circle" style="margin: auto;"></a></li>
-							<li><a href="#"><img src="/public/lib/img/Jax.png"
-									alt="HELLO" class="img-circle" style="margin: auto;"></a>
-								<ul>
-									<li><a href="#"><img src="/public/lib/img/Ahri.png"
-											alt="HELLO" class="img-circle" style="margin: auto;"></a></li>
-									<li><a href="#"><img src="/public/lib/img/Fiora.png"
-											alt="HELLO" class="img-circle" style="margin: auto;"></a></li>
-									<li><a href="#"><img src="/public/lib/img/Vi.png"
-											alt="HELLO" class="img-circle" style="margin: auto;"></a></li>
-								</ul></li>
-							<li><a href="#"><img src="/public/lib/img/Vayne.png"
-					alt="HELLO" class="img-circle" style="margin: auto;"></a></li>
-						</ul></li>
+
+					</c:forEach>
 				</ul></li>
 		</ul>
 	</div>
