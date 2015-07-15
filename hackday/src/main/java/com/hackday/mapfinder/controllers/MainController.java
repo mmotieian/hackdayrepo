@@ -5,14 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.hackday.mapfinder.model.EmployeeModel;
-import com.hackday.mapfinder.services.EmployeeLookupImpl;
 import com.hackday.mapfinder.services.IEmployeeLookup;
 
 @Controller
@@ -31,11 +28,6 @@ public class MainController {
 		//model.addAttribute("employeeList", iEmployeeLookup.lookupEmployee("James"));
 		return "home";
 	}
-	
-	/*@RequestMapping(value = "/search/{searchTerm}", headers="Accept=application/json")
-	public List<EmployeeModel> searchEmployee(Model model, @PathVariable String searchTerm) {
-		return iEmployeeLookup.lookupEmployee(searchTerm);
-	}*/
 
     
     @RequestMapping(value="/search")
@@ -52,4 +44,5 @@ public class MainController {
         }
         model.addAttribute("employeeList", employeeList);
         return "searchResults";
+    }
 }
