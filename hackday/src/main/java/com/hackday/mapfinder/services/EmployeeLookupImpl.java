@@ -39,8 +39,14 @@ public class EmployeeLookupImpl implements IEmployeeLookup {
 		
 		String SQL = "SELECT * FROM EMPLOYEE";
 		
-		List<EmployeeModel> empList = (List<EmployeeModel>) jdbcTemplate.query(SQL,new EmployeeMapper());
+		List<EmployeeModel> empList = (ArrayList<EmployeeModel>) jdbcTemplate.query(SQL,new EmployeeMapper());
 		
+		if(empList.size() == 0){
+			EmployeeModel empty = new EmployeeModel();
+			empty.setFirstName("No Subordinates");
+			empty.setAlias("AAAA");
+			empList.add(empty);
+		}
 		/*for(EmployeeModel emp: employees) {
 			if(emp.getFirstName().toUpperCase().equals(searchTerm.toUpperCase()) ||
 					emp.getAlias().toUpperCase().equals(searchTerm.toUpperCase()) || 

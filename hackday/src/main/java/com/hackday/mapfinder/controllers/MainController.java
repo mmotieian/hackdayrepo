@@ -31,15 +31,16 @@ public class MainController {
 	}
 	
 	@RequestMapping(value= "/orgChart/{alias}", headers="Accept=application/json")
-	public String orgChart(Model model) {
-		model.addAttribute("supervisor", iEmployeeLookup.getEmployeeByAlias("FFAE"));
-		model.addAttribute("employeeList", iEmployeeLookup.getDirectReports("FFAE"));
+	public String orgChart(Model model, @PathVariable String alias) {
+		model.addAttribute("supervisor", iEmployeeLookup.getEmployeeByAlias(alias));
+		model.addAttribute("employeeList", iEmployeeLookup.getDirectReports(alias));
 		return "orgChart";
 	}
 	
 	@RequestMapping(value = "/search/{searchTerm}", headers="Accept=application/json")
 	public List<EmployeeModel> searchEmployee(Model model, @PathVariable String searchTerm) {
 		return iEmployeeLookup.lookupEmployee(searchTerm);
+	
 	}
 	
 	@RequestMapping(value = "/employee/{employeeAlias}", method = RequestMethod.GET, headers="Accept=application/json")
