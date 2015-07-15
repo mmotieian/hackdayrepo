@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.1.xsd">
+		
+		<bean class="com.hackday.mapfinder.model.EmployeeModel">
+				<property name="alias"><value>FFAA</value></property>
+				<property name="firstName"><value>James</value></property>
+				<property name="lastName"><value>Mellinger</value></property>
+				<property name="phoneNumer"><value>23728123</value></property>
+				<property name="supervisorAlias"><value>FFAF</value></property>
+				<property name="title"><value>Systems-Analyst Web</value></property>
+		</bean>
+		<bean class="com.hackday.mapfinder.model.EmployeeModel">
+			<property name="alias"><value>FHAB</value></property>
+			<property name="firstName"><value>Bernardo</value></property>
+			<property name="lastName"><value>Rivera</value></property>
+			<property name="phoneNumer"><value>128371823</value></property>
+			<property name="supervisorAlias"><value>FFAF</value></property>
+			<property name="title"><value>Systems-Analyst Web</value></property>
+		</bean>
+		<bean class="com.hackday.mapfinder.model.EmployeeModel">
+			<property name="alias"><value>FFAC</value></property>
+			<property name="firstName"><value>Elizabeth</value></property>
+			<property name="lastName"><value>Johnson</value></property>
+			<property name="phoneNumer"><value>4732423423</value></property>
+			<property name="supervisorAlias"><value>FFAF</value></property>
+			<property name="title"><value>Systems-Analyst Web</value></property>
+		</bean>
+		<bean class="com.hackday.mapfinder.model.EmployeeModel">
+			<property name="alias"><value>FFAB</value></property>
+			<property name="firstName"><value>Thomas</value></property>
+			<property name="lastName"><value>Matthew</value></property>
+			<property name="phoneNumer"><value>238472342</value></property>
+			<property name="supervisorAlias"><value>FFAF</value></property>
+			<property name="title"><value>Systems-Analyst Web</value></property>
+		</bean>
+		<bean class="com.hackday.mapfinder.model.EmployeeModel">
+			<property name="alias"><value>FFAD</value></property>
+			<property name="firstName"><value>Mohammad</value></property>
+			<property name="lastName"><value>Najar</value></property>
+			<property name="phoneNumer"><value>2347823784</value></property>
+			<property name="supervisorAlias"><value>FFAF</value></property>
+			<property name="title"><value>Systems-Analyst Web</value></property>
+		</bean>
+		<bean class="com.hackday.mapfinder.model.EmployeeModel">
+			<property name="alias"><value>FFAE</value></property>
+			<property name="firstName"><value>Shane</value></property>
+			<property name="lastName"><value>St. Luce</value></property>
+			<property name="phoneNumer"><value>2384728934</value></property>
+			<property name="supervisorAlias"><value>FFAF</value></property>
+			<property name="title"><value>Systems-Analyst Web</value></property>
+		</bean>
+		<bean class="com.hackday.mapfinder.model.EmployeeModel">
+			<property name="alias"><value>FFAF</value></property>
+			<property name="firstName"><value>Luke</value></property>
+			<property name="lastName"><value>Reardon</value></property>
+			<property name="phoneNumer"><value>237283123</value></property>
+			<property name="supervisorAlias"><value></value></property>
+			<property name="title"><value>Manager</value></property>
+		</bean>
+	
+</beans>

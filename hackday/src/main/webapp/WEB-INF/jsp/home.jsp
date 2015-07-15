@@ -19,13 +19,16 @@
 	<script src="/public/lib/js/bootstrap.min.js"></script>
 
 
-
 	<div>
+		<form action="#" th:action=""></form>
+	</div>
+
+	<!-- <div>
 		<c:if test="${not empty employeeList}">
 			<ul>
 				<c:forEach var="employee" items="${employeeList}">
-					<li>${employee.fName}</li>
-					<li>${employee.lName}</li>
+					<li>${employee.firstName}</li>
+					<li>${employee.lastName}</li>
 					<li>${employee.title}</li>
 					<li>${employee.phoneNumer}</li>
 					<li>${employee.cubicle}</li>
@@ -67,7 +70,7 @@
 						</ul></li>
 				</ul></li>
 		</ul>
-	</div>
+	</div>/ -->
 
 </body>
 </html>

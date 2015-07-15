@@ -9,28 +9,30 @@ package com.hackday.mapfinder.model;
  */
 public class EmployeeModel {
 
-	private String fName;
-	private String lName;
+	private String firstName;
+	private String lastName;
 	private String title;
 	private String phoneNumer;
 	private String cubicle;
+	private String alias;
+	private String supervisorAlias;
 
 	// employee photo !!
 
-	public String getfName() {
-		return fName;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setfName(String fName) {
-		this.fName = fName;
+	public void setFirstName(String fName) {
+		this.firstName = fName;
 	}
 
-	public String getlName() {
-		return lName;
+	public String getLastName() {
+		return lastName;
 	}
 
-	public void setlName(String lName) {
-		this.lName = lName;
+	public void setLastName(String lName) {
+		this.lastName = lName;
 	}
 
 	public String getTitle() {
@@ -56,5 +58,22 @@ public class EmployeeModel {
 	public void setCubicle(String d) {
 		this.cubicle = d;
 	}
+
+	public String getAlias() {
+		return alias;
+	}
+
+	public void setAlias(String alias) {
+		this.alias = alias;
+	}
+
+	public String getSupervisorAlias() {
+		return supervisorAlias;
+	}
+
+	public void setSupervisorAlias(String supervisorAlias) {
+		this.supervisorAlias = supervisorAlias;
+	}
+	
 
 }
