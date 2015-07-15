@@ -18,17 +18,43 @@
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="/public/lib/js/bootstrap.min.js"></script>
 
-	<div>
-			<ul>
-				<c:forEach var="employee" items="${employeeList}">
-					<li>${employee.firstName}</li>
-					<li>${employee.lastName}</li>
-					<li>${employee.title}</li>
-					<li>${employee.phoneNumer}</li>
-					<li>${employee.cubicle}</li>
-				</c:forEach>
-			</ul>
+	<h1 style="margin-top:100px; margin-left:490px;">
+	Results
+	</h1>
+
+	<div style="margin-top:100px;">
+			<table class="table">
+				<thead>
+					<tr>
+						<td>
+							First Name
+						</td>
+						<td>
+							Last Name
+						</td>
+						<td>
+							Alias
+						</td>
+					</tr>	
+				</thead>
+				<tbody>
+					<c:forEach var="employee" items="${employeeList}">
+					<tr>
+						<td>${employee.firstName}</td>
+						<td>${employee.lastName}</td> 
+						<td>${employee.alias}</td>
+						<td>
+	  					<button type="button" class="btn btn-default pull-right" onclick="location.href='/mapPage'">View Map</button>
+	  					</td>
+	  					<td>
+	  					<button type="button" onclick="window.location='/orgChart/${employee.alias}';" class="btn btn-default pull-right">View Organization Chart</button>
+						</td>
+					</tr>	
+					</c:forEach>
+				</tbody>
+			</table>
 	</div>
 
 </body>
 </html>
+
