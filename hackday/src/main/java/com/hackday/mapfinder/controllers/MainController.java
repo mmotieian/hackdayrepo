@@ -35,30 +35,5 @@ public class MainController {
 	public List<EmployeeModel> searchEmployee(Model model, @PathVariable String searchTerm) {
 		return iEmployeeLookup.lookupEmployee(searchTerm);
 	}*/
-	
-<<<<<<< HEAD
-=======
-	@RequestMapping(value = "/employee/{employeeAlias}", method = RequestMethod.GET, headers="Accept=application/json")
-	public EmployeeModel loadEmployeeWithAlias(Model model, @PathVariable String employeeAlias) {
-		return iEmployeeLookup.getEmployeeByAlias(employeeAlias);
 
-	}
-	
-	@RequestMapping(value = "/employees/", method = RequestMethod.GET, headers="Accept=application/json")
-	public List<EmployeeModel> loadEmployees(Model model) {
-		return iEmployeeLookup.getEmployees();
-
-	}
-	
-	@RequestMapping(value="/search")
-	public String startSearch(Model model) {
-		return "search";
-	}
-	
-	@RequestMapping(value="/searchResults/employee", method=RequestMethod.GET, params="employee")
-	public String getEmployee(@RequestParam("employee") String employee) {
-	    System.out.println(employee);
-	    return "SearchResults";
-	}
->>>>>>> origin/master
 }
