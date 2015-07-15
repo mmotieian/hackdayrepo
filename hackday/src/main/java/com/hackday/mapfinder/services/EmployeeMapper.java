@@ -16,6 +16,8 @@ public class EmployeeMapper implements RowMapper {
 		employee.setLastName(rs.getString("lastName"));
 		employee.setSupervisorAlias(rs.getString("supervisorAlias"));
 		employee.setTitle(rs.getString("title"));
+		employee.setCubicle(rs.getString("cubicle"));
+		employee.setPhoneNumer(rs.getString("phoneNumber"));
 		
 		return employee;
 	}

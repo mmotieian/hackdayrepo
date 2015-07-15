@@ -41,9 +41,15 @@ public class MainController {
 
 	}
 	
-	@RequestMapping(value = "/employees/", method = RequestMethod.GET, headers="Accept=application/json")
+	@RequestMapping(value = "/employees", method = RequestMethod.GET, headers="Accept=application/json")
 	public List<EmployeeModel> loadEmployees(Model model) {
 		return iEmployeeLookup.getEmployees();
+
+	}
+	
+	@RequestMapping(value = "/directReports/{alias}", method = RequestMethod.GET, headers="Accept=application/json")
+	public List<EmployeeModel> getDirectReports(Model model, @ PathVariable String alias) {
+		return iEmployeeLookup.getDirectReports(alias);
 
 	}
 }
