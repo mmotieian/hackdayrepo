@@ -21,4 +21,5 @@ public interface IEmployeeLookup {
 	public EmployeeModel getEmployeeByAlias(String alias);
 	public void setNameParameterJdbcTemplate(DataSource db);
 	public List<EmployeeModel> getEmployees();
+	public List<EmployeeModel> getDirectReports(String alias);
 }

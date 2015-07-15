@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.hackday.mapfinder.model.EmployeeModel;
 import com.hackday.mapfinder.services.IEmployeeLookup;
 
-@RestController
+@Controller
 public class MainController {
 
 	private IEmployeeLookup iEmployeeLookup;
@@ -28,6 +28,13 @@ public class MainController {
 
 		model.addAttribute("employeeList", iEmployeeLookup.lookupEmployee("James"));
 		return "home";
+	}
+	
+	@RequestMapping(value= "/orgChart/{alias}", headers="Accept=application/json")
+	public String orgChart(Model model) {
+		model.addAttribute("supervisor", iEmployeeLookup.getEmployeeByAlias("FFAE"));
+		model.addAttribute("employeeList", iEmployeeLookup.getDirectReports("FFAE"));
+		return "orgChart";
 	}
 	
 	@RequestMapping(value = "/search/{searchTerm}", headers="Accept=application/json")

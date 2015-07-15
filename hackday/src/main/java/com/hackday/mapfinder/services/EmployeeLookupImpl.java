@@ -10,7 +10,9 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 import org.springframework.stereotype.Service;
 
 import com.hackday.mapfinder.model.EmployeeModel;
@@ -76,17 +78,24 @@ public class EmployeeLookupImpl implements IEmployeeLookup {
 
 	@Override
 	public EmployeeModel getEmployeeByAlias(String alias) {
+		String SQL = "SELECT * FROM EMPLOYEE WHERE alias = :empAlias";
+		SqlParameterSource namedParamters = new MapSqlParameterSource("empAlias", alias);
 		
-		System.out.println(employees.size());
-		for(EmployeeModel empModel: employees) {
-			if(empModel.getAlias().equals(alias)) {
-				return empModel;
-			}
-		}
+		EmployeeModel employeeModel = (EmployeeModel) jdbcTemplate.queryForObject(SQL, namedParamters, new EmployeeMapper());
 		
-		return null;
+		return employeeModel;
+		
 	}
 	
+	
+
+	@Override
+	public List<EmployeeModel> getDirectReports(String alias) {
+		String SQL = "SELECT * FROM EMPLOYEE WHERE supervisorAlias = '" + alias + "'";
+		List<EmployeeModel> empList = (List<EmployeeModel>) jdbcTemplate.query(SQL,new EmployeeMapper());
+		return empList;
+	}
+
 
 	public static List<EmployeeModel> generateEmployees() {
 		List<EmployeeModel> empList = new ArrayList<>();
