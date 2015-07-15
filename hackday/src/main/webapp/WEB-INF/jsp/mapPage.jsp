@@ -7,20 +7,22 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" href="css/normalize.min.css">
-        <link rel="stylesheet" href="Semantic-UI-CSS-master/semantic.min.css">
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="/public/lib/css/normalize.css">
+        <link rel="stylesheet" href="/public/lib/css/Semantic-UI-CSS-master/semantic.min.css">
+        <link rel="stylesheet" href="/public/lib/css/mapPage.css">
     </head>
     <body>
         <h1>CityLine 1 Floor 9 <span id="pos"></span></h1>
         <div id="mapFrame">
             <div id="imgFrame">
-                <img src="img/CL1F9.png" id="map">
+                <img src="/public/lib/img/CL1F9.png" id="map">
             </div>
-            <canvas id="path">Yo!</canvas>
+            <canvas id="path"></canvas>
         </div>
         <p id="a"></p>
-        <script src="/mapfinder/src/main/resources/static/public/lib/js/jquery-2.1.4.min.js"></script>
-        <script src="/mapfinder/src/main/resources/static/public/lib/js/mapPage.js"></script>
+        
+        <script src="/public/lib/js/jquery-2.1.4.min.js"></script>
+        <script src="/public/lib/js/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+        <script src="/public/lib/js/mapPage.js"></script>
     </body>
 </html>

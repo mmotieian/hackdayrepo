@@ -67,7 +67,7 @@ function graphNode(name, tL, bR, neigh) {
 
 function buildMapGraph() {
     var bernardo = graphNode("1-9109", [320, 81], [336, 97], []);
-    var james = graphNode("1-9116", [350, 62], [366, 78], []);
+    var james = graphNode("1-9116", [346, 62], [362, 78], []);
     var hall1 = graphNode("hall1", [335, 36], [350, 151], [bernardo, james]);
     var westHall = graphNode("westHall", [113, 151], [1150, 173], [hall1]);
     var lobby = graphNode("lobby", [780, 174], [820, 300], [westHall]);
