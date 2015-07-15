@@ -45,4 +45,9 @@ public class MainController {
         model.addAttribute("employeeList", employeeList);
         return "searchResults";
     }
+    
+    @RequestMapping("/mapPage")
+    public String mapPage(Model model) {
+    	return "mapPage";
+    }
 }
