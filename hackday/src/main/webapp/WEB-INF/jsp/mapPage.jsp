@@ -8,8 +8,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="/public/lib/css/normalize.css">
-        <link rel="stylesheet" href="/public/lib/css/Semantic-UI-CSS-master/semantic.min.css">
+        <link rel="stylesheet" href="/public/lib/css/bootstrap.min.css">
         <link rel="stylesheet" href="/public/lib/css/mapPage.css">
+        <link rel="stylesheet" href="/public/lib/js/jquery-ui-1.11.4/jquery-ui.min.css">
     </head>
     <body>
         <h1>CityLine 1 Floor 9 <span id="pos"></span></h1>
@@ -19,14 +20,10 @@
             </div>
             <canvas id="path"></canvas>
         </div>
-        <p id="a"></p>
+        <div id="cubicle" style="display:none">${cubicle}</div>
         
-        <script src="/public/lib/js/jquery-2.1.4.min.js"></script>
+        <script src="/public/lib/js/jquery-ui-1.11.4/external/jquery/jquery.js"></script>
         <script src="/public/lib/js/jquery-ui-1.11.4/jquery-ui.min.js"></script>
         <script src="/public/lib/js/mapPage.js"></script>
-        <script>
-        	var temp = "${cubicle}";
-        	alert(temp);
-        </script>
     </body>
 </html>

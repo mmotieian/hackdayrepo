@@ -36,11 +36,6 @@ public class MainController {
         return "search";
     }
     
-    @RequestMapping(value="/orgChart/{alias}")
-    public String orgChart(Model model, @PathVariable String alias) {
-        return "orgChart";
-    }
-    
     @RequestMapping(value="/searchResults/employee", method=RequestMethod.GET, params="employee")
     public String getEmployee(@RequestParam("employee") String employee, Model model) {
         System.out.println(employee);
@@ -51,6 +46,20 @@ public class MainController {
         model.addAttribute("employeeList", employeeList);
         return "searchResults";
     }
+    
+    @RequestMapping(value= "/orgChart/{alias}", headers="Accept=application/json")
+	public String orgChart(Model model, @PathVariable String alias) {
+    	if(iEmployeeLookup.getDirectReports(alias).size() < 1) {
+    		String newAlias = iEmployeeLookup.getEmployeeSupervisorByAlias(alias).getAlias();
+    		model.addAttribute("supervisor", iEmployeeLookup.getEmployeeByAlias(newAlias));
+    		model.addAttribute("employeeList", iEmployeeLookup.getDirectReports(newAlias));
+    	} else {
+    		model.addAttribute("supervisor", iEmployeeLookup.getEmployeeByAlias(alias));
+    		model.addAttribute("employeeList", iEmployeeLookup.getDirectReports(alias));
+    	}
+		
+		return "orgChart";
+	}
     
     @RequestMapping("/mapPage/{cubicle}")
     public String mapPage(Model model, @PathVariable String cubicle) {

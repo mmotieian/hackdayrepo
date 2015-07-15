@@ -17,6 +17,8 @@ import org.springframework.stereotype.Service;
 
 import com.hackday.mapfinder.model.EmployeeModel;
 
+import scala.annotation.meta.getter;
+
 /**
  * @author FFSY
  *
@@ -74,8 +76,19 @@ public class EmployeeLookupImpl implements IEmployeeLookup {
 
 	@Override
 	public List<EmployeeModel> getDirectReports(String alias) {
-		// TODO Auto-generated method stub
-		return null;
+		String SQL = "SELECT * FROM EMPLOYEE WHERE supervisorAlias = '" + alias + "'";
+		List<EmployeeModel> empList = (List<EmployeeModel>) jdbcTemplate.query(SQL,new EmployeeMapper());
+		return empList;
+	}
+	
+	@Override
+	public EmployeeModel getEmployeeSupervisorByAlias(String alias) {
+		String SQL = "SELECT * FROM EMPLOYEE WHERE alias = (SELECT supervisorAlias FROM EMPLOYEE WHERE alias = :empAlias)";
+		SqlParameterSource namedParamters = new MapSqlParameterSource("empAlias", alias);
+		
+		EmployeeModel employeeModel = (EmployeeModel) jdbcTemplate.queryForObject(SQL, namedParamters, new EmployeeMapper());
+		
+		return employeeModel;
 	}
 
 }
