@@ -23,15 +23,15 @@ public class MainController {
 		this.iEmployeeLookup = iEmployeeLookup;
 	}
 
-	@RequestMapping("/")
+	/*@RequestMapping("/")
 	public String searchPage(Model model) {
 
 		//model.addAttribute("employeeList", iEmployeeLookup.lookupEmployee("James"));
 		return "home";
-	}
+	}*/
 
     
-    @RequestMapping(value="/search")
+    @RequestMapping(value="/")
     public String startSearch(Model model) {
         return "search";
     }

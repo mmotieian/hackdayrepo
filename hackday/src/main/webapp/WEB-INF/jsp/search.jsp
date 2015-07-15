@@ -18,12 +18,15 @@
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="/public/lib/js/bootstrap.min.js"></script>
 
-	<h1 style="margin-top:100px; margin-left:400px;">
+	<h1 style="margin-top:100px; margin-left:490px;">
 	Find an Employee
 	</h1>
+	<h2 style=" margin-left:250px;">
+	Enter employee name (first or last), alias, or cube number 
+	</h2>
 
 	<div class="row search">
-            <div class="col-md-8 col-md-offset-2" style="margin-top:100px; margin-left:400px;">
+            <div class="col-md-8 col-md-offset-2" style="margin-top:50px; margin-left:520px;">
                 <form class="form-inline" action="/searchResults/employee" >
                     <div class="form-group">
                         <label class="sr-only" for="">Enter search terms</label>
