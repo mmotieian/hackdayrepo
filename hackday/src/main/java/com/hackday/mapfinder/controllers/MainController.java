@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hackday.mapfinder.model.EmployeeModel;
+import com.hackday.mapfinder.services.EmployeeLookupImpl;
 import com.hackday.mapfinder.services.IEmployeeLookup;
 
 @Controller
@@ -44,6 +45,7 @@ public class MainController {
 	
 	@RequestMapping(value = "/employees/", method = RequestMethod.GET, headers="Accept=application/json")
 	public List<EmployeeModel> loadEmployees(Model model) {
+		System.out.println("Got to controller");
 		return iEmployeeLookup.getEmployees();
 
 	}
@@ -54,8 +56,13 @@ public class MainController {
 	}
 	
 	@RequestMapping(value="/searchResults/employee", method=RequestMethod.GET, params="employee")
-	public String getEmployee(@RequestParam("employee") String employee) {
+	public String getEmployee(@RequestParam("employee") String employee, Model model) {
 	    System.out.println(employee);
-	    return "SearchResults";
+	    List<EmployeeModel> employeeList = iEmployeeLookup.lookupEmployee(employee);
+	    for(int i = 0; i < employeeList.size(); i++) {
+	    	System.out.println(employeeList.get(i).getFirstName());
+	    }
+	    model.addAttribute("employeeList", employeeList);
+	    return "searchResults";
 	}
 }

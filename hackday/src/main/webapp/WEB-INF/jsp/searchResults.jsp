@@ -18,14 +18,15 @@
 		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script src="/public/lib/js/bootstrap.min.js"></script>
 
-	<div>
+	<div style="margin-left:100px; margin-top:100px;">
 			<ul>
 				<c:forEach var="employee" items="${employeeList}">
-					<li>${employee.firstName}</li>
-					<li>${employee.lastName}</li>
-					<li>${employee.title}</li>
-					<li>${employee.phoneNumer}</li>
-					<li>${employee.cubicle}</li>
+					<h1>${employee.firstName}
+					<div class="btn-group" role="group" aria-label="...">
+  						<!--<button type="button" class="btn btn-default pull-right">View Map</button>-->
+  						<button type="button" class="btn btn-default pull-right">View Organization Chart</button>
+					</div>
+					</h1>
 				</c:forEach>
 			</ul>
 	</div>
