@@ -26,7 +26,7 @@ public class MainController {
 	@RequestMapping("/")
 	public String searchPage(Model model) {
 
-		model.addAttribute("employeeList", iEmployeeLookup.lookupEmployee("James"));
+		//model.addAttribute("employeeList", iEmployeeLookup.lookupEmployee("James"));
 		return "home";
 	}
 	
@@ -35,21 +35,4 @@ public class MainController {
 		return iEmployeeLookup.lookupEmployee(searchTerm);
 	}
 	
-	@RequestMapping(value = "/employee/{employeeAlias}", method = RequestMethod.GET, headers="Accept=application/json")
-	public EmployeeModel loadEmployeeWithAlias(Model model, @PathVariable String employeeAlias) {
-		return iEmployeeLookup.getEmployeeByAlias(employeeAlias);
-
-	}
-	
-	@RequestMapping(value = "/employees", method = RequestMethod.GET, headers="Accept=application/json")
-	public List<EmployeeModel> loadEmployees(Model model) {
-		return iEmployeeLookup.getEmployees();
-
-	}
-	
-	@RequestMapping(value = "/directReports/{alias}", method = RequestMethod.GET, headers="Accept=application/json")
-	public List<EmployeeModel> getDirectReports(Model model, @ PathVariable String alias) {
-		return iEmployeeLookup.getDirectReports(alias);
-
-	}
 }
