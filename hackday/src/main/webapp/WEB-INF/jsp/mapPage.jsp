@@ -21,6 +21,6 @@
         </div>
         <p id="a"></p>
         <script src="/mapfinder/src/main/resources/static/public/lib/js/jquery-2.1.4.min.js"></script>
-        <script src="/mapfinder/src/main/resources/static/public/lib/js/main.js"></script>
+        <script src="/mapfinder/src/main/resources/static/public/lib/js/mapPage.js"></script>
     </body>
 </html>
