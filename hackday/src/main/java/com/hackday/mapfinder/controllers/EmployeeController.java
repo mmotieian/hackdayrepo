@@ -39,4 +39,11 @@ public class EmployeeController {
 		return iEmployeeLookup.getDirectReports(alias);
 
 	}
+	
+	@RequestMapping(value = "/employeeSearch/{employeeAlias}", method = RequestMethod.GET, headers="Accept=application/json")
+	public List<EmployeeModel> loadEmployeeMatching(Model model, @PathVariable String employeeAlias) {
+		return iEmployeeLookup.lookupEmployee(employeeAlias);
+
+	}
+	
 }
