@@ -13,14 +13,14 @@ function getMousePos(e, offset) {
 }
 
 function setHoverEvent() {
-    $("#path").mousemove(function(e) {
+    $("#map").mousemove(function(e) {
         var mouseMove = new Date().getTime();
         var offset = $(this).offset();
         lastMousePos = getMousePos(e, offset);
         setTimeout(function() {
             var tempPos = getMousePos(e, offset);
             if(lastMousePos[0] === tempPos[0] && lastMousePos[1] === tempPos[1]) {
-                getLocation(tempPos);
+                getLocation(tempPos, e);
             } else {
                 lastMousePos = getMousePos(e);    
             }
@@ -28,8 +28,7 @@ function setHoverEvent() {
     });
 }
 
-function getLocation(pos) {
-    debugger
+function getLocation(pos, e) {
     var mapW = $("#map").width();
     var mapH = $("#map").height();
     pos[0] = pos[0] / mapW;
@@ -45,15 +44,10 @@ function getLocation(pos) {
             pos[1] >= topLeft[1] && pos[1] <= bottomRight[1]) {
             context.fillRect(topLeft[0] * mapW - hiliteMargin/2, topLeft[1] * mapH - hiliteMargin/2,
                              width, height);
-            popUp();
+            popUp("Name", "Title", "Phone", "Cube", "Alias", "Boss");
             return;
         }
     }
-    $("#a").text("");
-}
-
-function popUp() {
-
 }
 
 function graphNode(name, tL, bR, neigh) {
@@ -75,8 +69,23 @@ function buildMapGraph() {
     return lobby;
 }
 
-function displayInfo() {
-    
+function popUp(name, title, phone, location, alias, supervisor) {
+	debugger
+	var popup = $('<div id="popup"></div>');
+//	popup.css("z-index", "1");
+//	popup.appendChild(
+//		"<h2>" + name + " (" + alias + ")<h2>"
+//	);
+	popup.append("<h4>" + name + " (" + alias + ")</h4>");
+	popup.append("<h4>" + title + "</h4>");
+	popup.append("<h4>Phone number: " + phone + "</h4>");
+	popup.append("<h4>Location: " + location + "</h4>");
+	popup.append("<h4>Supervisor: " + supervisor + "</h4>");
+//    $("<h3>Phone number: " + phone + "</h3>").appendTo(popup);
+//    $("<h3>Location: " + location + "</h3>").appendTo(popup);
+//    $("<h3>Supervisor: " + supervisor + "</h3>").appendTo(popup);
+//    alert("");
+    popup.dialog({modal: true});
 }
 
 function setUpCanvas() {
@@ -86,7 +95,7 @@ function setUpCanvas() {
     path.setAttribute("width", $("#map").width());
     $("#path").css("position", "absolute");
     $("#path").css("top", $("#map").offset().top);
-    ctx.fillStyle = "red";
+    ctx.fillStyle = "rgb(1, 215, 245)";
     return ctx;
 }
 
