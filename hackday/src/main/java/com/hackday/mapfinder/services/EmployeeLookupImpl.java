@@ -37,18 +37,9 @@ public class EmployeeLookupImpl implements IEmployeeLookup {
 	@Override
 	public List<EmployeeModel> lookupEmployee(String searchTerm) {
 		
-		String SQL = "SELECT * FROM EMPLOYEE";
+		String SQL = "SELECT * FROM EMPLOYEE WHERE firstName = '" + searchTerm + "' OR lastName = '" + searchTerm + "' OR alias = '" + searchTerm + "' OR cubicle = '" + searchTerm + "'";
 		
 		List<EmployeeModel> empList = (List<EmployeeModel>) jdbcTemplate.query(SQL,new EmployeeMapper());
-		
-		/*for(EmployeeModel emp: employees) {
-			if(emp.getFirstName().toUpperCase().equals(searchTerm.toUpperCase()) ||
-					emp.getAlias().toUpperCase().equals(searchTerm.toUpperCase()) || 
-					emp.getLastName().toUpperCase().equals(searchTerm.toUpperCase()) || 
-					emp.getCubicle().toUpperCase().equals(searchTerm.toUpperCase())) {
-				empList.add(emp);
-			}
-		}*/
 
 		return empList;
 

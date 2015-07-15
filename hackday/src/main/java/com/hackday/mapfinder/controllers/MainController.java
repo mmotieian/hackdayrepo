@@ -28,7 +28,7 @@ public class MainController {
 	@RequestMapping("/")
 	public String searchPage(Model model) {
 
-		model.addAttribute("employeeList", iEmployeeLookup.lookupEmployee("James"));
+		//model.addAttribute("employeeList", iEmployeeLookup.lookupEmployee("James"));
 		return "home";
 	}
 	
@@ -36,33 +36,20 @@ public class MainController {
 	public List<EmployeeModel> searchEmployee(Model model, @PathVariable String searchTerm) {
 		return iEmployeeLookup.lookupEmployee(searchTerm);
 	}*/
-	
-	@RequestMapping(value = "/employee/{employeeAlias}", method = RequestMethod.GET, headers="Accept=application/json")
-	public EmployeeModel loadEmployeeWithAlias(Model model, @PathVariable String employeeAlias) {
-		return iEmployeeLookup.getEmployeeByAlias(employeeAlias);
 
-	}
-	
-	@RequestMapping(value = "/employees/", method = RequestMethod.GET, headers="Accept=application/json")
-	public List<EmployeeModel> loadEmployees(Model model) {
-		System.out.println("Got to controller");
-		return iEmployeeLookup.getEmployees();
-
-	}
-	
-	@RequestMapping(value="/search")
-	public String startSearch(Model model) {
-		return "search";
-	}
-	
-	@RequestMapping(value="/searchResults/employee", method=RequestMethod.GET, params="employee")
-	public String getEmployee(@RequestParam("employee") String employee, Model model) {
-	    System.out.println(employee);
-	    List<EmployeeModel> employeeList = iEmployeeLookup.lookupEmployee(employee);
-	    for(int i = 0; i < employeeList.size(); i++) {
-	    	System.out.println(employeeList.get(i).getFirstName());
-	    }
-	    model.addAttribute("employeeList", employeeList);
-	    return "searchResults";
-	}
+    
+    @RequestMapping(value="/search")
+    public String startSearch(Model model) {
+        return "search";
+    }
+    
+    @RequestMapping(value="/searchResults/employee", method=RequestMethod.GET, params="employee")
+    public String getEmployee(@RequestParam("employee") String employee, Model model) {
+        System.out.println(employee);
+        List<EmployeeModel> employeeList = iEmployeeLookup.lookupEmployee(employee);
+        for(int i = 0; i < employeeList.size(); i++) {
+            System.out.println(employeeList.get(i).getFirstName());
+        }
+        model.addAttribute("employeeList", employeeList);
+        return "searchResults";
 }
